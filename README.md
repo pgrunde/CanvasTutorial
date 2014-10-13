@@ -29,4 +29,13 @@ ctx.lineWidth = 10;
 ctx.strokeStyle = "#ff0000";
 ctx.lineCap = 'round';
 ```
-`lineWidth` sets the width, `strokeStyle` is the color, and `lineCap` sets the line end styling (`round`, `square`, and `butt` are the lineCap options)
+
+`lineWidth` sets the width, `strokeStyle` is the color, and `lineCap` sets the line end styling (`round`, `square`, and `butt` are the `lineCap` options). Now we will start the path at a point, move to a new point, and stroke on the line we just made. Continue writing:
+
+```
+ctx.beginPath();
+ctx.moveTo(100, 150);
+ctx.lineTo(450, 50);
+ctx.stroke();
+```
+
