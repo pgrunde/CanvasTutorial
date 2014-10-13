@@ -15,4 +15,9 @@ HTML5 Canvas is a super-cool tool for drawing, animating, making games, and more
 </html>
 ```
 
-Hello thar
+You may wish to add a border around your canvas to clearly see it. In your javascript file, hook up a variable to the context of the canvas to begin drawing:
+
+```
+var canvas = document.getElementById('my-canvas');
+var context = canvas.getContext('2d');
+```
