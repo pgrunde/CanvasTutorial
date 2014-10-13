@@ -34,8 +34,10 @@ ctx.lineCap = 'round';
 
 ```
 ctx.beginPath();
-ctx.moveTo(100, 150);
-ctx.lineTo(450, 50);
+ctx.moveTo(0, 0);
+ctx.lineTo(250, 400);
 ctx.stroke();
 ```
+
+Yay a line! First `beginPath()` starts a new path. The starting location is defined with `moveTo(x,y)`. **It is important to note that y increases as you go down the page while x increases from left to right.** `lineTo(x,y)` sets the way we draw a line and to which location we will draw. Finally we stroke the line we just set.   
 
