@@ -21,7 +21,7 @@ You may wish to add a border around your canvas to clearly see it. In your javas
 var canvas = document.getElementById('my-canvas');
 var ctx = canvas.getContext('2d');
 ```
-
+## Line
 Now we're ready to begin drawing our first line! Paths all have a beginning, movement, and an end. They also have some options that must be set before drawing a line on the path. This includes things like a width, color, and style for a path end. In the javascript file continue writing: 
 
 ```
@@ -39,5 +39,15 @@ ctx.lineTo(250, 400);
 ctx.stroke();
 ```
 
-Yay a line! First `beginPath()` starts a new path. The starting location is defined with `moveTo(x,y)`. **It is important to note that y increases as you go down the page while x increases from left to right.** `lineTo(x,y)` sets the way we draw a line and to which location we will draw. Finally we stroke the line we just set.   
+Yay a line! First `beginPath()` starts a new path. The starting location is defined with `moveTo(x,y)`. **It is important to note that y increases as you go down the page while x increases from left to right.** `lineTo(x,y)` sets the way we draw a line and to which location we will draw. Finally we stroke the line we just set.
+   
+Next let us draw a second line of another color. To accomplish this, set a new stroke style and begin a new path in your brand new color. We'll draw a V back up to the top with a blue line.
+
+```
+ctx.strokeStyle = '#0000ff';
+ctx.beginPath();
+ctx.moveTo(250, 400);
+ctx.lineTo(500, 0);
+ctx.stroke();
+```
 
