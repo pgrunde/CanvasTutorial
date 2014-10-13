@@ -15,9 +15,18 @@ HTML5 Canvas is a super-cool tool for drawing, animating, making games, and more
 </html>
 ```
 
-You may wish to add a border around your canvas to clearly see it. In your javascript file, hook up a variable to the context of the canvas to begin drawing:
+You may wish to add a border around your canvas to clearly see it. In your javascript file, hook up a variable to the context of the canvas to begin drawing. We're going to use the "2d" context, though there is an experimental "webgl" context that is only on browsers running WebGL. 
 
 ```
 var canvas = document.getElementById('my-canvas');
-var context = canvas.getContext('2d');
+var ctx = canvas.getContext('2d');
 ```
+
+Now we're ready to begin drawing our first line! Paths all have a beginning, movement, and an end. They also have some options that must be set before drawing a line on the path. This includes things like a width, color, and style for a path end. In the javascript file continue writing: 
+
+```
+ctx.lineWidth = 10;
+ctx.strokeStyle = "#ff0000";
+ctx.lineCap = 'round';
+```
+`lineWidth` sets the width, `strokeStyle` is the color, and `lineCap` sets the line end styling (`round`, `square`, and `butt` are the lineCap options)
