@@ -304,7 +304,7 @@ Your training is complete, but this is just the first step. You will find some c
 
 ### Draw a single line that moves out in a specific angle
 
-Remeber radians? Yeah you're gonna need those suckers again. I want my line to start at the center of the canvas and have a ~~hypotenuse~~ length of 75, and an angle of π/6. Deep within your Junior High mathematics memory should stir an ancient beast, [SohCahToa](http://www.mathwords.com/s/sohcahtoa.htm). Also remember that JavaScript has `Math.cos(angle)` and `Math.sin(angle)` which totally take radians.
+Remember radians? Yeah you're gonna need those suckers again. I want my line to start at the center of the canvas and have a ~~hypotenuse~~ length of 75, and an angle of π/6. Deep within your Junior High mathematics memory should stir an ancient beast, [SohCahToa](http://www.mathwords.com/s/sohcahtoa.htm). Also remember that JavaScript has `Math.cos(angle)` and `Math.sin(angle)` which totally take radians. Remember that everything needs to be a float to calculate properly, and that we're moving OUT from the center point. *I have just been informed that π/6 does not appear to draw the same angle shown [here](http://en.wikipedia.org/wiki/Radian#mediaviewer/File:Degree-Radian_Conversion.svg), are you bad enough to ~~save the president?~~ figure out why?)*
 
 ### Animate a single line to spin in a circle
 
