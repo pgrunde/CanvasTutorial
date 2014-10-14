@@ -210,4 +210,4 @@ ctx.fillStyle = grd;
 ctx.fill();
 ```
 
-Pass different coordinate arguments for your `createLinearGradient` to change the direction of the gradient, then see what happens when you change that peculiar first number argument for the two `addColorStop`. Then check out what happens when you use `createRadialGradient(250, 250, 20, 250, 250, 300);` instead of the linear gradient context method. 
+Pass different coordinate arguments for your `createLinearGradient` to change the direction of the gradient, then see what happens when you change that peculiar first number argument for the two `addColorStop`. Then check out what happens when you use `createRadialGradient(250, 250, 20, 250, 250, 300);` instead of the linear gradient context method (the arguments are two circles, *x*, *y*, *radius*, try to change the starting x coordinate of the second circle to 0). 
