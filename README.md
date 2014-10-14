@@ -1,6 +1,6 @@
 # HTML5 Canvas Tutorial
 
-HTML5 Canvas is a super-cool tool for drawing, animating, making games, and more. No Gems, no libraries, just straight up HTML and JavaScript to get things done. Let's get started with the setup:
+HTML5 Canvas is a super-cool tool for drawing, animating, making games, and more. No Gems, no libraries, just straight up HTML and JavaScript to get things done. Keep your trusty [cheat sheet](http://cheatsheetworld.com/programming/html5-canvas-cheat-sheet/) nearby and let's get started with the setup:
 
 ```
 <html>
@@ -210,4 +210,21 @@ ctx.fillStyle = grd;
 ctx.fill();
 ```
 
-Pass different coordinate arguments for your `createLinearGradient` to change the direction of the gradient, then see what happens when you change that peculiar first number argument for the two `addColorStop`. Then check out what happens when you use `createRadialGradient(250, 250, 20, 250, 250, 300);` instead of the linear gradient context method (the arguments are two circles, *x*, *y*, *radius*, try to change the starting x coordinate of the second circle to 0). 
+Pass different coordinate arguments for your `createLinearGradient` to change the direction of the gradient, then see what happens when you change that peculiar first number argument for the two `addColorStop`. Then check out what happens when you use `createRadialGradient(250, 250, 20, 250, 250, 300);` instead of the linear gradient context method (the arguments are two circles, *x*, *y*, *radius*, try to change the starting x coordinate of the second circle to 0).
+ 
+You can also set patterns by loading an image prototype and using the context method `createPattern` to set your `fillStyle`.
+
+```
+var imageObj = new Image();
+imageObj.onload = function() {
+  var pattern = ctx.createPattern(imageObj, 'repeat');
+
+  ctx.rect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = pattern;
+  ctx.fill();
+};
+imageObj.src = 'http://1.bp.blogspot.com/-10uYQ232GmA/VB2cCRa0pDI/AAAAAAAAGgw/m9nRdE1d-Rg/s1600/checkerboard-tile-pattern.jpg';
+```
+
+`onload` is a useful method on Image prototypes as it allows you to render images only after they properly load. Don't forget to set your image sources!.
+
