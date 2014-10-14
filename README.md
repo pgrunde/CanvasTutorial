@@ -235,7 +235,7 @@ imageObject.src = 'http://1.bp.blogspot.com/-10uYQ232GmA/VB2cCRa0pDI/AAAAAAAAGgw
 
 ## Simple animation
 
-You can animate canvas elements in a variety of ways- I'm going to show you a simple way involving `setInterval(function, speed)`. Every time the function in our setInterval runs we will clear the drawing space, move some coordinates around, and redraw. Start by setting all our variables for the line- for now let us draw a vertical line that moves to the right. `dy` sets the rate of change.
+You can animate canvas elements in a variety of ways- I'm going to show you a simple way involving `setInterval(function, speed)`. Every time the function in our setInterval runs we will clear the drawing space, move some coordinates around, and redraw. Start by setting all our variables for the line- for now let us draw a vertical line that moves to the right. `dx` sets the rate of change.
  
 ```
 var canvas = document.getElementById('my-canvas');
@@ -295,3 +295,5 @@ var drawCanvas = function(){
   endX += dx;
 };
 ```
+
+You've made a cartoon! Ok so this example isn't the most impressive, however you have the skills now to animate absolutely any variable for any of the canvas tools available to you. So many possibilities! 
