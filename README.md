@@ -88,7 +88,27 @@ ctx.stroke();
 
 Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian). Radians measure angles starting at 0 and up to 2π, while degrees measure from 0 to 360.
 
-## 
+## Quadratic Curve
+
+I don't want some circley shaped ne'er-do-well plebeian curve. I want to bend it any which way I want- so I'll need it to (take a beginning point, a control point, and an end point)[http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-quadratic-curves/html5-canvas-quadratic-curves-diagram.png] to define my very own quadratic curve. Play around with the points to see how they work.
+ 
+ ```
+ var contextX = 240;
+ var contextY = 50;
+ var controlX = 275;
+ var controlY = 220;
+ var endX = 310;
+ var endY = 50;
+ 
+ ctx.beginPath();
+ ctx.moveTo(contextX, contextY);
+ ctx.quadraticCurveTo(controlX, controlY, endX, endY);
+ 
+ ctx.lineWidth = 25;
+ ctx.strokeStyle = 'purple';
+ ctx.lineCap = 'round';
+ ctx.stroke();
+ ```
 
 
  
