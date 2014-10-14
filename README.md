@@ -90,7 +90,7 @@ Notice how we can get the center of the canvas via `canvas.width` and `canvas.he
 
 ## Quadratic Curve
 
-I don't want some circley shaped ne'er-do-well plebeian curve. I want to bend it any which way I want- so I'll need it to (take a beginning point, a control point, and an end point)[http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-quadratic-curves/html5-canvas-quadratic-curves-diagram.png] to define my very own quadratic curve. Play around with the points to see how they work.
+I don't want some circley shaped ne'er-do-well plebeian curve. I want to bend it any which way I want- so I'll need it to [take a beginning point, a control point, and an end point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-quadratic-curves/html5-canvas-quadratic-curves-diagram.png) to define my very own quadratic curve. Play around with the points to see how they work.
  
  ```
  var contextX = 240;
