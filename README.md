@@ -194,4 +194,20 @@ ctx.stroke();
 ctx.fill();
 ```
 
- Once you think you grasp how it works, create your own shape, anything you want to draw, then close and fill it.
+Once you think you grasp how it works, create your own shape, anything you want to draw, then close and fill it.
+
+## Understanding fillStyle to unlock Patterns, Gradients
+
+'Why wouldn't you just give fillStyle a name like fillColor or something?' said me when I first used it. We don't because it can take variables which describe gradients or patterns, too. Let us see a gradient variable in action- first set a variable `grd` using the `createLinearGradient` context method. Pass two coordinates as arguments defining the line over which the gradient will change color. Set the colors with `addColorStop`, and assign your `fillStyle` to the `grd` variable.
+
+```
+ctx.rect(50, 50, 400, 400);
+
+var grd = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+    grd.addColorStop(0, 'yellow');
+    grd.addColorStop(1, 'red');
+ctx.fillStyle = grd;
+ctx.fill();
+```
+
+Pass different coordinate arguments for your `createLinearGradient` to change the direction of the gradient, then see what happens when you change that first number argument for the `addColorStop`s. 
