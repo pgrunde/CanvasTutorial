@@ -15,7 +15,7 @@ HTML5 Canvas is a super-cool tool for drawing, animating, making games, and more
 </html>
 ```
 
-You may wish to add a border around your canvas to clearly see it. In your javascript file, hook up a variable to the context of the canvas to begin drawing. We're going to use the "2d" context, though there is an experimental "webgl" context that is only on browsers running WebGL. 
+You may wish to add a CSS border around your canvas to clearly see it. In your javascript file, hook up a variable to the context of the canvas to begin drawing. We're going to use the "2d" context, though there is an experimental "webgl" context that is only on browsers running WebGL. 
 
 ```
 var canvas = document.getElementById('my-canvas');
@@ -268,7 +268,7 @@ var drawCanvas = function(){
 init()
 ```
 
-We still need to draw our line on the canvas. Put the actual line drawing into our `drawCanvas` function:
+We still need to draw our line on the canvas. Put the actual line drawing into our `drawCanvas` function after the `clearRect` call:
  
  ```
 var drawCanvas = function(){
@@ -281,7 +281,7 @@ var drawCanvas = function(){
 };
 ```
 
-This is close, however we've got no movement on the screen yet. Since we are moving the object from left to right, we have to ensure that our X variables are increasing at our defined speed. Finish the `drawCanvas` method:
+This is close, however we've got no movement on the screen yet. Since we are moving the object from left to right, we have to ensure that our X variables are increasing at our defined speed. Finish the `drawCanvas` method by increasing our X variables by `dx` on every frame:
 
 ```
 var drawCanvas = function(){
@@ -297,3 +297,35 @@ var drawCanvas = function(){
 ```
 
 You've made a cartoon! Ok so this example isn't the most impressive, however you have the skills now to animate absolutely any variable for any of the canvas tools available to you. So many possibilities! 
+
+Your training is complete, but this is just the first step. You will find some challenges below to test your might and grow your skills- complete them to get 15 Internet Points (Internet Points on non-redeemable and hold no cash value, and frankly serve no purpose. BUT YOU MUST HAVE THEM).
+
+# Challenges
+
+### Draw a single line that moves out in a specific angle
+
+Remeber radians? Yeah you're gonna need those suckers again. I want my line to start at the center of the canvas and have a ~~hypotenuse~~ length of 75, and an angle of π/6. Deep within your Junior High mathematics memory should stir an ancient beast, [SohCahToa](http://www.mathwords.com/s/sohcahtoa.htm). Also remember that JavaScript has `Math.cos(angle)` and `Math.sin(angle)` which totally take radians.
+
+### Animate a single line to spin in a circle
+
+Let us take the line you just made and spin it like we're on the Price is Right. Create a setup for the line to animate and adjust only the angle for each frame of animation. It should spin without ending and maintain a constant speed.
+  
+### Acceleration is just the rate of a rate
+
+"In this house we obey the laws of thermodynamics!" - *Homer*. That spinner needs to slow down. Either on page refresh or when you click the spinner, I expect it to start at a random angle with a speed that randomly varies in a range. The spinner's speed should gradually go down until it hits zero.
+
+### Lines in a timely fashion
+
+Anybody remember those like, time tracker things that are circular and sort of tell the time but with arrows pointing between numbers? Let's make our line make the minute hand of one of those. Hint: if 2π is one full rotation around the circle, I think **2π * 1/60** will give you the angle change after one minute. The trick is getting it to start on top...
+
+### Lines in a timely fashion - Hard Mode
+
+Draw both a minute and hour hand of the clock (it is called a clock, I looked it up) based on the current time.
+
+### Lines in a timely fashion - Insanity Mode
+
+Animate the clock to always display the current time properly, morning or afternoon.
+  
+### Lines in a timely fashion - Are you kidding me this could go on my resume at this point Mode
+
+Using three separate canvases, draw three animated clocks which represent the current time in three different time zones- allow your users to pick the timezone via a drop down selector.
