@@ -67,7 +67,7 @@ Here we see two consecutive `lineTo(x,y)` to draw our angle. Next is the new `li
 
 ## Arc
 
-We're going to look at circular arcs. The `arc` method draws portions of a circle- let us draw one at the center of canvas. It takes a [center x,y coordinate, a radius, a start and end angle, and a stroke direction](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-arcs/html5-canvas-arcs-diagram.png). Since this is javascript, let us start passing variables into our method arguments to see what *that* looks like. Change the multiplier for start and end angles between 0 and 2 to see the effect on the arc, playing with the direction boolean as you go.
+We're going to look at circular arcs. The `arc` method draws portions of a circle- let us draw one at the center of canvas. It takes a [center x,y coordinate, a radius, a start and end angle, and a stroke direction](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-arcs/html5-canvas-arcs-diagram.png). Since this is javascript, let us start passing variables into our method arguments to see what *that* looks like.
 
 ```
 var x = canvas.width / 2;
@@ -86,7 +86,7 @@ ctx.arc(x, y, radius, startAngle, endAngle, counterClockwise);
 ctx.stroke();
 ```
 
-Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian). Radians measure angles starting at 0 and up to 2π, while degrees measure from 0 to 360. If you want a perfect circle, pass `0` and `2*Math.PI` for your start and end angles.
+Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian). Radians measure angles starting at 0 and up to 2π, while degrees measure from 0 to 360. If you want a perfect circle, pass `0` and `2*Math.PI` for your start and end angles.  Change the multiplier for start and end angles between 0 and 2 to see the effect on the arc, playing with the direction boolean as you go.
 
 ## Quadratic Curve
 
