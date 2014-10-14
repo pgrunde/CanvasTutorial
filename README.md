@@ -86,7 +86,7 @@ ctx.arc(x, y, radius, startAngle, endAngle, counterClockwise);
 ctx.stroke();
 ```
 
-Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian). Radians measure angles starting at 0 and up to 2π, while degrees measure from 0 to 360.
+Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian). Radians measure angles starting at 0 and up to 2π, while degrees measure from 0 to 360. If you want a perfect circle, pass `0` and `2*Math.PI` for your start and end angles.
 
 ## Quadratic Curve
 
