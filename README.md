@@ -67,7 +67,7 @@ Here we see two consecutive `lineTo(x,y)` to draw our angle. Next is the new `li
 
 ## Arc
 
-We're going to look at circular arcs. The `arc` method draws portions of a circle- let us draw one at the center of canvas. It takes a center x,y coordinate, a radius, a start and end angle, and a stroke direction. Since this is javascript, let us start passing variables into our method arguments to see what *that* looks like.
+We're going to look at circular arcs. The `arc` method draws portions of a circle- let us draw one at the center of canvas. It takes a [center x,y coordinate, a radius, a start and end angle, and a stroke direction](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-arcs/html5-canvas-arcs-diagram.png). Since this is javascript, let us start passing variables into our method arguments to see what *that* looks like.
 
 ```
 var x = canvas.width / 2;
@@ -86,5 +86,9 @@ ctx.arc(x, y, radius, startAngle, endAngle, counterClockwise);
 ctx.stroke();
 ```
 
-Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian). Radians measure angles starting at 0 and up to 2π, while degrees measure from 0 to 360. **90° = π/2** | **180° = π** | **270° = 3π/2** | **0/360° = 0/2π**
+Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian). Radians measure angles starting at 0 and up to 2π, while degrees measure from 0 to 360.
+
+## 
+
+
  
