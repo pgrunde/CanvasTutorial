@@ -90,7 +90,7 @@ Notice how we can get the center of the canvas via `canvas.width` and `canvas.he
 
 ## Quadratic Curve
 
-I don't want some circley shaped ne'er-do-well plebeian curve. I want to bend it any which way I want- so I'll need it to [take a beginning point, a control point, and an end point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-quadratic-curves/html5-canvas-quadratic-curves-diagram.png) to define my very own quadratic curve. Play around with the points to see how they work, then draw your own curve coming out of the first- don't forget to set the `lineJoin`.
+I don't want some circley shaped ne'er-do-well plebeian curve. I want to bend it any which way I want- so I'll need it to [take a beginning point, a control point, and an end point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-quadratic-curves/html5-canvas-quadratic-curves-diagram.png) to define my very own quadratic curve.
  
 ```
 var contextX = 240;
@@ -109,10 +109,12 @@ ctx.strokeStyle = 'purple';
 ctx.lineCap = 'round';
 ctx.stroke();
 ```
+
+ Play around with the points to see how they work, then draw your own curve coming out of the first- don't forget to set the `lineJoin`.
  
 ## Bezier Curve
 
-A single control point is alright. Pretty cool I guess. Two is where it is at, and that is precisely what `bezierCurveTo` takes- [two control point coordinates and an ending point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-bezier-curves/html5-canvas-bezier-curves-diagram.png). This enables more nuanced curves with bubbles and contractions all over. Try to use two bezier curves to create a familiar shape, like a tooth or an eye or a ping pong paddle. 
+A single control point is alright. Pretty cool I guess. Two is where it is at, and that is precisely what `bezierCurveTo` takes- [two control point coordinates and an ending point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-bezier-curves/html5-canvas-bezier-curves-diagram.png). This enables more nuanced curves with bubbles and contractions all over. 
  
 ```
 var contextX = 240;
@@ -133,6 +135,8 @@ ctx.strokeStyle = '#cccccc';
 ctx.lineCap = 'round';
 ctx.stroke();
 ```
+
+Try to use some bezier curves to create a familiar shape, like a tooth or an eye or a ping pong paddle.
 
 ## Fills, Rects[,](http://en.wikipedia.org/wiki/Serial_comma) and Other Shapes
 
@@ -172,7 +176,7 @@ ctx.fill();
 ctx.stroke();
 ```
 
-Let's show an example with a bezier curve connected to a quadratic curve that is closed shut and filled. Note the final context point of 50,75 drawing a vertical 25px line to the starting context point 50,50. Once you think you grasp how it works, create your own shape, anything you want to draw, then close and fill it.
+Let's show an example with a bezier curve connected to a quadratic curve that is closed shut and filled. Note the final context point of 50,75 drawing a vertical 25px line to the starting context point 50,50.
 
 ```
 ctx.lineWidth = 30;
@@ -190,3 +194,4 @@ ctx.stroke();
 ctx.fill();
 ```
 
+ Once you think you grasp how it works, create your own shape, anything you want to draw, then close and fill it.
