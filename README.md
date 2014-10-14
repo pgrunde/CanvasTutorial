@@ -90,25 +90,48 @@ Notice how we can get the center of the canvas via `canvas.width` and `canvas.he
 
 ## Quadratic Curve
 
-I don't want some circley shaped ne'er-do-well plebeian curve. I want to bend it any which way I want- so I'll need it to [take a beginning point, a control point, and an end point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-quadratic-curves/html5-canvas-quadratic-curves-diagram.png) to define my very own quadratic curve. Play around with the points to see how they work.
+I don't want some circley shaped ne'er-do-well plebeian curve. I want to bend it any which way I want- so I'll need it to [take a beginning point, a control point, and an end point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-quadratic-curves/html5-canvas-quadratic-curves-diagram.png) to define my very own quadratic curve. Play around with the points to see how they work, then draw your own curve coming out of the first- don't forget to set the `lineJoin`.
  
- ```
- var contextX = 240;
- var contextY = 50;
- var controlX = 275;
- var controlY = 220;
- var endX = 310;
- var endY = 50;
- 
- ctx.beginPath();
- ctx.moveTo(contextX, contextY);
- ctx.quadraticCurveTo(controlX, controlY, endX, endY);
- 
- ctx.lineWidth = 25;
- ctx.strokeStyle = 'purple';
- ctx.lineCap = 'round';
- ctx.stroke();
- ```
+```
+var contextX = 240;
+var contextY = 50;
+var controlX = 275;
+var controlY = 220;
+var endX = 310;
+var endY = 50;
 
+ctx.beginPath();
+ctx.moveTo(contextX, contextY);
+ctx.quadraticCurveTo(controlX, controlY, endX, endY);
+
+ctx.lineWidth = 25;
+ctx.strokeStyle = 'purple';
+ctx.lineCap = 'round';
+ctx.stroke();
+```
+ 
+## Bezier Curve
+
+A single control point is alright. Pretty cool I guess. Two is where it is at, and that is precisely what `bezierCurveTo` takes- [two control point coordinates and an ending point](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-bezier-curves/html5-canvas-bezier-curves-diagram.png). This enables more nuanced curves with bubbles and contractions all over.
+ 
+```
+var contextX = 240;
+var contextY = 50;
+var controlOneX = 75;
+var controlOneY = 220;
+var controlTwoX = 475;
+var controlTwoY = 420;
+var endX = 310;
+var endY = 25;
+
+ctx.beginPath();
+ctx.moveTo(contextX, contextY);
+ctx.bezierCurveTo(controlOneX, controlOneY, controlTwoX, controlTwoY, endX, endY);
+
+ctx.lineWidth = 25;
+ctx.strokeStyle = '#cccccc';
+ctx.lineCap = 'round';
+ctx.stroke();
+```
 
  
