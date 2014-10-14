@@ -41,7 +41,7 @@ ctx.stroke();
 
 Yay a line! First `beginPath()` starts a new path. The starting location is defined with `moveTo(x,y)`. **It is important to note that y increases as you go down the page while x increases from left to right.** `lineTo(x,y)` sets the way we draw a line and to which location we will draw. Finally we stroke the line we just set.
    
-Next let us draw a second line of another color. To accomplish this, set a new stroke style and begin a new path in your brand new color. We'll draw a V back up to the top with a blue line.
+Next let us draw a second line of another color. To accomplish this, set a new stroke style and begin a new path in your brand new color. We'll draw a V back up to the top with a blue line (afterwards, play around with the `lineCap` property to see how they look with this setup)
 
 ```
 ctx.strokeStyle = '#0000ff';
@@ -51,3 +51,40 @@ ctx.lineTo(500, 0);
 ctx.stroke();
 ```
 
+Great! Two separate lines- but I what if I draw one line with an angle in it, not two separate lines? I'll need that to make the angle look nice. Let us all remember Bob Ross and put a happy little angle in our line. Continue writing:
+
+```
+ctx.strokeStyle = '#00ff00';
+ctx.beginPath();
+ctx.moveTo(150,150);
+ctx.lineTo(250,50);
+ctx.lineTo(350,150);
+ctx.lineJoin = 'round';
+ctx.stroke();
+```
+
+Here we see two consecutive `lineTo(x,y)` to draw our angle. Next is the new `lineJoin` property which accepts `'round'`, `'miter'`, and `'bevel'`. Test each to see how they look then we'll move on.
+
+## Arc
+
+We're going to look at circular arcs first. The `arc` method draws portions of a circle- let us draw one at the center of canvas. It takes a center x,y coordinate, a radius, a start and end angle, and a stroke direction. Since this is javascript, let us start passing variables into our method arguments to see what *that* looks like.
+
+```
+var x = canvas.width / 2;
+var y = canvas.height / 2;
+var radius = 75;
+var startAngle = 1.1 * Math.PI;
+var endAngle = 0.9 * Math.PI;
+var counterClockwise = false;
+
+ctx.lineWidth = 25;
+ctx.strokeStyle = "red";
+ctx.lineCap = "round";
+
+ctx.beginPath();
+ctx.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+ctx.stroke();
+```
+
+Notice how we can get the center of the canvas via `canvas.width` and `canvas.height`, and that the start and end angles are all based on [radians](http://en.wikipedia.org/wiki/Radian).  
+ 
