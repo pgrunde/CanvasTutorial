@@ -157,6 +157,8 @@ ctx.strokeStyle = 'yellow';
 ctx.stroke();
 ```
 
+### closePath()
+
 How do you fill a funny shaped path? `closePath()` to the rescue! This method takes wherever your current context is located and draws a line to the very first context of your path. Here an arc is closed to form a semicircle:
 
 ```
@@ -212,19 +214,58 @@ ctx.fill();
 
 Pass different coordinate arguments for your `createLinearGradient` to change the direction of the gradient, then see what happens when you change that peculiar first number argument for the two `addColorStop`. Then check out what happens when you use `createRadialGradient(250, 250, 20, 250, 250, 300);` instead of the linear gradient context method (the arguments are two circles, *x*, *y*, *radius*, try to change the starting x coordinate of the second circle to 0).
  
+### Pattern
+
 You can also set patterns by loading an image prototype and using the context method `createPattern` to set your `fillStyle`.
 
 ```
-var imageObj = new Image();
-imageObj.onload = function() {
-  var pattern = ctx.createPattern(imageObj, 'repeat');
+var imageObject = new Image();
+imageObject.onload = function() {
+  var pattern = ctx.createPattern(imageObject, 'repeat');
 
   ctx.rect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = pattern;
   ctx.fill();
 };
-imageObj.src = 'http://1.bp.blogspot.com/-10uYQ232GmA/VB2cCRa0pDI/AAAAAAAAGgw/m9nRdE1d-Rg/s1600/checkerboard-tile-pattern.jpg';
+imageObject.src = 'http://1.bp.blogspot.com/-10uYQ232GmA/VB2cCRa0pDI/AAAAAAAAGgw/m9nRdE1d-Rg/s1600/checkerboard-tile-pattern.jpg';
 ```
 
-`onload` is a useful method on Image prototypes as it allows you to render images only after they properly load. Don't forget to set your image sources!.
+`onload` is a useful method on Image prototypes as it allows you to render images only after they properly load. Don't forget to set your image sources!
 
+
+## Simple animation
+
+You can animate canvas elements in a variety of ways- I'm going to show you a simple way involving `setInterval(function, speed)`. Every time the function in our setInterval runs we will clear the drawing space, move some coordinates around, and redraw. Start by setting all our variables for the line- for now let us draw a vertical line that moves to the right. `dy` sets the rate of change.
+ 
+```
+var canvas = document.getElementById('my-canvas');
+var ctx = canvas.getContext('2d');
+
+ctx.lineWidth = 5;
+ctx.strokeStyle = "#ff00ff";
+ctx.lineCap = 'round';
+
+var startX = 50;
+var startY = 50;
+
+var endX = 50;
+var endY = 150;
+
+var dy = 2;
+```
+ 
+Next we will set our initialize function which calls all once-only functions for the animation. Inside we put the setInterval which calls our `drawCanvas` function. The first step to animation is clearing the current frame out for the next one. `clearRect` accomplishes this feat by erasing everything drawn inside it.
+
+```
+var init = function(){
+  setInterval(drawCanvas, 20)
+};
+
+var drawCanvas = function(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+};
+
+init()
+```
+
+We still need to draw our line on the canvas. Put the actual line drawing into our `drawCanvas` function 
