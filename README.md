@@ -136,7 +136,7 @@ ctx.stroke();
 
 ## Fills, Rects[,](http://en.wikipedia.org/wiki/Serial_comma) and Other Shapes
 
-Just as you can stroke a path, you can fill one too. I will demonstrate with a new method that makes rectangles if given a starting coordinate, width, and height. Note that `fillStyle` sets a color while `fill()` does the coloring.
+Just as you can stroke a path, you can fill one too. I will demonstrate with a new method `rect(x, y, width, height)` that makes rectangles if given a starting coordinate, width, and height. Note that `fillStyle` sets a color while `fill()` does the coloring.
 
 ```
 var x = 50;
