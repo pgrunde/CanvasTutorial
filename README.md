@@ -153,5 +153,40 @@ ctx.strokeStyle = 'yellow';
 ctx.stroke();
 ```
 
+How do you fill a funny shaped path? `closePath()` to the rescue! This method takes wherever your current context is located and draws a line to the very first context of your path. Here an arc is closed to form a semicircle:
 
- 
+```
+var x = 100;
+var y = 100;
+var radius = 70;
+var startAngle = Math.PI/2.5;
+
+ctx.lineWidth = 5;
+ctx.fillStyle = 'pink';
+ctx.strokeStyle = '#550000';
+
+ctx.beginPath();
+ctx.arc(x, y, radius, startAngle, startAngle + Math.PI, false);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
+```
+
+Let's show an example with a bezier curve connected to a quadratic curve that is closed shut and filled. Note the final context point of 50,75 drawing a vertical 25px line to the starting context point 50,50.
+
+```
+ctx.lineWidth = 30;
+ctx.lineCap = 'round';
+ctx.lineJoin = 'round';
+ctx.strokeStyle = 'blue';
+ctx.fillStyle = 'lightblue';
+
+ctx.beginPath();
+ctx.moveTo(50,50);
+ctx.bezierCurveTo(400,200,150,150,460,30);
+ctx.quadraticCurveTo(250,450,50,75);
+ctx.closePath();
+ctx.stroke();
+ctx.fill();
+```
+
