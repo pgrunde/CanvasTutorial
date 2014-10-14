@@ -67,7 +67,7 @@ Here we see two consecutive `lineTo(x,y)` to draw our angle. Next is the new `li
 
 ## Arc
 
-We're going to look at circular arcs. The `arc` method draws portions of a circle- let us draw one at the center of canvas. It takes a [center x,y coordinate, a radius, a start and end angle, and a stroke direction](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-arcs/html5-canvas-arcs-diagram.png). Since this is javascript, let us start passing variables into our method arguments to see what *that* looks like.
+We're going to look at circular arcs. The `arc` method draws portions of a circle- let us draw one at the center of canvas. It takes a [center x,y coordinate, a radius, a start and end angle, and a stroke direction](http://www.html5canvastutorials.com/demos/tutorials/html5-canvas-arcs/html5-canvas-arcs-diagram.png). Since this is javascript, let us start passing variables into our method arguments to see what *that* looks like. Change the multiplier for start and end angles between 0 and 2 to see the effect on the arc, playing with the direction boolean as you go.
 
 ```
 var x = canvas.width / 2;
@@ -172,7 +172,7 @@ ctx.fill();
 ctx.stroke();
 ```
 
-Let's show an example with a bezier curve connected to a quadratic curve that is closed shut and filled. Note the final context point of 50,75 drawing a vertical 25px line to the starting context point 50,50. Create your own shape, anything you want to draw, close it, and fill it.
+Let's show an example with a bezier curve connected to a quadratic curve that is closed shut and filled. Note the final context point of 50,75 drawing a vertical 25px line to the starting context point 50,50. Once you think you grasp how it works, create your own shape, anything you want to draw, then close and fill it.
 
 ```
 ctx.lineWidth = 30;
