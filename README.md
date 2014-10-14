@@ -251,7 +251,7 @@ var startY = 50;
 var endX = 50;
 var endY = 150;
 
-var dy = 2;
+var dx = 2;
 ```
  
 Next we will set our initialize function which calls all once-only functions for the animation. Inside we put the setInterval which calls our `drawCanvas` function. The first step to animation is clearing the current frame out for the next one. `clearRect` accomplishes this feat by erasing everything drawn inside it.
@@ -268,4 +268,30 @@ var drawCanvas = function(){
 init()
 ```
 
-We still need to draw our line on the canvas. Put the actual line drawing into our `drawCanvas` function 
+We still need to draw our line on the canvas. Put the actual line drawing into our `drawCanvas` function:
+ 
+ ```
+var drawCanvas = function(){
+ ctx.clearRect(0, 0, canvas.width, canvas.height);
+ 
+ ctx.beginPath();
+ ctx.moveTo(startX,startY);
+ ctx.lineTo(endX, endY);
+ ctx.stroke();
+};
+```
+
+This is close, however we've got no movement on the screen yet. Since we are moving the object from left to right, we have to ensure that our X variables are increasing at our defined speed. Finish the `drawCanvas` method:
+
+```
+var drawCanvas = function(){
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.moveTo(startX,startY);
+  ctx.lineTo(endX, endY);
+  ctx.stroke();
+  
+  startX += dx;
+  endX += dx;
+};
+```
