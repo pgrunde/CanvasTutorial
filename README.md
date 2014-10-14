@@ -302,29 +302,29 @@ Your training is complete, but this is just the first step. You will find some c
 
 # Challenges
 
-### Draw a single line that moves out in a specific angle
+### Draw a single line that moves out at a specific angle
 
-Remember radians? Yeah you're gonna need those suckers again. I want my line to start at the center of the canvas and have a ~~hypotenuse~~ length of 75, and an angle of π/6. Deep within your Junior High mathematics memory should stir an ancient beast, [SohCahToa](http://www.mathwords.com/s/sohcahtoa.htm). Also remember that JavaScript has `Math.cos(angle)` and `Math.sin(angle)` which totally take radians. Remember that everything needs to be a float to calculate properly, and that we're moving OUT from the center point. *I have just been informed that π/6 does not appear to draw the same angle shown [here](http://en.wikipedia.org/wiki/Radian#mediaviewer/File:Degree-Radian_Conversion.svg), are you bad enough to ~~save the president?~~ figure out why?)*
+Remember radians? Yeah you're gonna need those suckers again. I want my line to start at the center of the canvas and have a ~~hypotenuse~~ length of 175, and an angle of π/6. Deep within your Junior High mathematics memory should stir an ancient beast, [SohCahToa](http://www.mathwords.com/s/sohcahtoa.htm). Also remember that JavaScript has `Math.cos(angle)` and `Math.sin(angle)` which totally take radians. Remember that everything needs to be a float to calculate properly, and that we're moving OUT from the center point. *I have just been informed that π/6 does not appear to draw the same angle shown [here](http://en.wikipedia.org/wiki/Radian#mediaviewer/File:Degree-Radian_Conversion.svg) but that is as intended. Are you bad enough to ~~save the president?~~ figure out why?)*
 
 ### Animate a single line to spin in a circle
 
-Let us take the line you just made and spin it like we're on the Price is Right. Create a setup for the line to animate and adjust only the angle for each frame of animation. It should spin without ending and maintain a constant speed.
+Let us take the line you just made and spin it like we're playing Twister. Create a setup for the line to animate and adjust only the angle for each frame of animation. It should spin without ending and maintain a constant speed.
   
 ### Acceleration is just the rate of a rate
 
-"In this house we obey the laws of thermodynamics!" - *Homer*. That spinner needs to slow down. Either on page refresh or when you click the spinner, I expect it to start at a random angle with a speed that randomly varies in a range. The spinner's speed should gradually go down until it hits zero.
+"In this house we obey the laws of thermodynamics!" - *Homer*. That spinner needs to slow down. Either on page refresh or when you click the spinner, I expect it to start at a random angle with a start speed that randomly varies in a range. The spinner's speed should gradually go down until it hits zero.
 
 ### Lines in a timely fashion
 
-Anybody remember those like, time tracker things that are circular and sort of tell the time but with arrows pointing between numbers? Let's make our line make the minute hand of one of those. Hint: if 2π is one full rotation around the circle, I think **2π * 1/60** will give you the angle change after one minute. The trick is getting it to start on top...
+Anybody remember those like, time tracker things that are circular and sort of tell the time but with arrows pointing between numbers? Let's make our line make the second hand of one of those. Hint: if 2π is one full rotation around the circle, I think **2π * 1/60** will give you the angle change after one second.
 
 ### Lines in a timely fashion - Hard Mode
 
-Draw both a minute and hour hand of the clock (it is called a clock, I looked it up) based on the current time.
+Draw a minute, hour, and second hand of the clock (it is called a clock, I looked it up) based on the current time at page load.
 
 ### Lines in a timely fashion - Insanity Mode
 
-Animate the clock to always display the current time properly, morning or afternoon.
+Animate the clock to always display the current time properly, morning or afternoon. Give it a lovely styling.
   
 ### Lines in a timely fashion - Are you kidding me this could go on my resume at this point Mode
 
