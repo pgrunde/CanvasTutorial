@@ -129,9 +129,15 @@ ctx.moveTo(contextX, contextY);
 ctx.bezierCurveTo(controlOneX, controlOneY, controlTwoX, controlTwoY, endX, endY);
 
 ctx.lineWidth = 25;
-ctx.strokeStyle = '#cccccc';
+ctx.strokeStyle = '#cccccc';  
 ctx.lineCap = 'round';
 ctx.stroke();
 ```
+
+## Fills, Rects[,](http://en.wikipedia.org/wiki/Serial_comma) and Other Shapes
+
+
+
+
 
  
