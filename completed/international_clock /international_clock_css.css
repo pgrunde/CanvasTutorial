@@ -1,0 +1,16 @@
+canvas {
+    border:1px solid black;
+    display: inline-block;
+}
+
+select {
+    display:block;
+    margin:0 auto;
+
+}
+
+.clockbox {
+    display: inline;
+    position:relative;
+    float:left;
+ }
